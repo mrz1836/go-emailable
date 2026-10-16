@@ -1,0 +1,373 @@
+{
+    "formatters": {
+        "enable": [
+            "gofmt",
+            "gofumpt"
+        ],
+        "exclusions": {
+            "generated": "lax",
+            "paths": [
+                ".*\\.my\\.go$",
+                "lib/bad.go",
+                ".make",
+                ".vscode",
+                "dist",
+                "third_party$",
+                "builtin$"
+            ]
+        },
+        "settings": {
+            "gci": {
+                "sections": [
+                    "standard",
+                    "default",
+                    "prefix(github.com/mrz1836/go-emailable)"
+                ]
+            },
+            "gofmt": {
+                "simplify": true
+            },
+            "gofumpt": {
+                "extra-rules": false
+            },
+            "goimports": {
+                "local-prefixes": [
+                    "github.com/mrz1836/go-emailable"
+                ]
+            }
+        }
+    },
+    "issues": {
+        "uniq-by-line": true
+    },
+    "linters": {
+        "disable": [
+            "gocritic",
+            "godot",
+            "gocyclo",
+            "wsl_v5"
+        ],
+        "enable": [
+            "asasalint",
+            "arangolint",
+            "asciicheck",
+            "bidichk",
+            "bodyclose",
+            "containedctx",
+            "contextcheck",
+            "copyloopvar",
+            "depguard",
+            "dogsled",
+            "durationcheck",
+            "embeddedstructfieldcheck",
+            "err113",
+            "errcheck",
+            "errchkjson",
+            "errname",
+            "errorlint",
+            "exhaustive",
+            "forbidigo",
+            "funcorder",
+            "gocheckcompilerdirectives",
+            "gochecknoglobals",
+            "gochecknoinits",
+            "gochecksumtype",
+            "gocognit",
+            "goconst",
+            "godox",
+            "goheader",
+            "gomoddirectives",
+            "gosec",
+            "gosmopolitan",
+            "govet",
+            "inamedparam",
+            "ineffassign",
+            "loggercheck",
+            "makezero",
+            "mirror",
+            "misspell",
+            "musttag",
+            "nakedret",
+            "nestif",
+            "nilerr",
+            "nilnesserr",
+            "nilnil",
+            "noctx",
+            "nolintlint",
+            "nosprintfhostport",
+            "prealloc",
+            "predeclared",
+            "protogetter",
+            "reassign",
+            "recvcheck",
+            "revive",
+            "rowserrcheck",
+            "spancheck",
+            "sqlclosecheck",
+            "staticcheck",
+            "testifylint",
+            "thelper",
+            "unconvert",
+            "unparam",
+            "unused",
+            "wastedassign",
+            "zerologlint"
+        ],
+        "exclusions": {
+            "rules": [
+                {
+                    "linters": [
+                        "forbidigo"
+                    ],
+                    "path": "live_smoke_internal_test\\.go$",
+                    "text": "os\\.(Getenv|LookupEnv)"
+                },
+                {
+                    "linters": [
+                        "forbidigo"
+                    ],
+                    "path": "(_test\\.go|internal/testutil/.*\\.go)$",
+                    "text": "http\\.NoBody"
+                },
+                {
+                    "linters": [
+                        "gosec"
+                    ],
+                    "path": "examples/.*\\.go$",
+                    "text": "G706"
+                },
+                {
+                    "linters": [
+                        "forbidigo"
+                    ],
+                    "path": "examples/quickstart/main\\.go$",
+                    "text": "os\\.Getenv|fmt\\.Println"
+                },
+                {
+                    "linters": [
+                        "goconst"
+                    ],
+                    "path": "_test\\.go$"
+                }
+            ]
+        },
+        "settings": {
+            "depguard": {
+                "rules": {
+                    "examples": {
+                        "allow": [
+                            "$gostd",
+                            "github.com/mrz1836/go-emailable"
+                        ],
+                        "deny": [
+                            {
+                                "desc": "test-only harness: import it from _test.go files, never from library or example code",
+                                "pkg": "github.com/mrz1836/go-emailable/internal/testutil"
+                            }
+                        ],
+                        "files": [
+                            "**/examples/**",
+                            "!$test"
+                        ],
+                        "list-mode": "strict"
+                    },
+                    "stdlib-only": {
+                        "allow": [
+                            "$gostd",
+                            "github.com/mrz1836/go-emailable"
+                        ],
+                        "deny": [
+                            {
+                                "desc": "test-only harness: import it from _test.go files, never from library code",
+                                "pkg": "github.com/mrz1836/go-emailable/internal/testutil"
+                            },
+                            {
+                                "desc": "library code never reads ZIP archives: the batch download file is the caller's to fetch and open",
+                                "pkg": "archive/zip"
+                            },
+                            {
+                                "desc": "library code never decompresses bodies itself: an encoded response is unexpected",
+                                "pkg": "compress/gzip"
+                            },
+                            {
+                                "desc": "library code never parses or writes CSV: the batch download file is the caller's to fetch and read",
+                                "pkg": "encoding/csv"
+                            },
+                            {
+                                "desc": "library code never logs; callers own logging",
+                                "pkg": "log"
+                            },
+                            {
+                                "desc": "request and response dumps would expose credentials and personal data",
+                                "pkg": "net/http/httputil"
+                            },
+                            {
+                                "desc": "library code never reads the environment, files or standard streams",
+                                "pkg": "os"
+                            },
+                            {
+                                "desc": "not needed; keep memory safety simple to audit",
+                                "pkg": "unsafe"
+                            }
+                        ],
+                        "files": [
+                            "$all",
+                            "!$test",
+                            "!**/internal/testutil/**",
+                            "!**/examples/**"
+                        ],
+                        "list-mode": "strict"
+                    }
+                }
+            },
+            "dogsled": {
+                "max-blank-identifiers": 2
+            },
+            "dupl": {
+                "threshold": 100
+            },
+            "exhaustive": {
+                "default-signifies-exhaustive": false
+            },
+            "forbidigo": {
+                "exclude-godoc-examples": true,
+                "forbid": [
+                    {
+                        "msg": "never print: output may carry credentials or personal data",
+                        "pattern": "^(fmt\\.Print(|f|ln)|print|println)$"
+                    },
+                    {
+                        "msg": "the SDK never reads the environment; callers pass configuration explicitly",
+                        "pattern": "^os\\.(Getenv|LookupEnv|Environ|ExpandEnv)$"
+                    },
+                    {
+                        "msg": "use the client built by NewClient, which refuses redirects",
+                        "pattern": "^http\\.DefaultClient$"
+                    },
+                    {
+                        "msg": "use the client built by NewClient, which refuses redirects",
+                        "pattern": "^http\\.(Get|Head|Post|PostForm)$"
+                    },
+                    {
+                        "msg": "no sleeps: the SDK never waits or retries, and tests use testing/synctest",
+                        "pattern": "^time\\.Sleep$"
+                    },
+                    {
+                        "msg": "never send http.NoBody: HTTP/2 treats it as safe to resend; use the SDK's non-rewindable body",
+                        "pattern": "^http\\.NoBody$"
+                    }
+                ]
+            },
+            "funcorder": {
+                "constructor": true
+            },
+            "funlen": {
+                "lines": 60,
+                "statements": 40
+            },
+            "gocognit": {
+                "min-complexity": 20
+            },
+            "goconst": {
+                "min-len": 3,
+                "min-occurrences": 10
+            },
+            "gocyclo": {
+                "min-complexity": 10
+            },
+            "godox": {
+                "keywords": [
+                    "NOTE",
+                    "OPTIMIZE",
+                    "HACK",
+                    "ATTN",
+                    "ATTENTION"
+                ]
+            },
+            "govet": {
+                "enable": [
+                    "atomicalign",
+                    "shadow"
+                ],
+                "settings": {
+                    "printf": {
+                        "funcs": [
+                            "(github.com/golangci/golangci-lint/pkg/logutils.Log).Infof",
+                            "(github.com/golangci/golangci-lint/pkg/logutils.Log).Warnf",
+                            "(github.com/golangci/golangci-lint/pkg/logutils.Log).Errorf",
+                            "(github.com/golangci/golangci-lint/pkg/logutils.Log).Fatalf"
+                        ]
+                    }
+                }
+            },
+            "lll": {
+                "line-length": 120,
+                "tab-width": 1
+            },
+            "misspell": {
+                "ignore-rules": [
+                    "bsv",
+                    "bitcoin"
+                ],
+                "locale": "US"
+            },
+            "nakedret": {
+                "max-func-lines": 30
+            },
+            "nestif": {
+                "min-complexity": 4
+            },
+            "nolintlint": {
+                "allow-unused": false,
+                "require-explanation": true,
+                "require-specific": true
+            },
+            "prealloc": {
+                "for-loops": false,
+                "range-loops": true,
+                "simple": true
+            },
+            "unparam": {
+                "check-exported": false
+            },
+            "wsl": {
+                "allow-assign-and-call": true,
+                "allow-cuddle-declarations": true,
+                "allow-multiline-assign": true,
+                "strict-append": true
+            }
+        }
+    },
+    "output": {
+        "formats": {
+            "text": {
+                "path": "stdout",
+                "print-issued-lines": true,
+                "print-linter-name": true
+            }
+        }
+    },
+    "run": {
+        "allow-parallel-runners": true,
+        "build-tags": [
+            "live"
+        ],
+        "concurrency": 8,
+        "issues-exit-code": 1,
+        "tests": true
+    },
+    "severity": {
+        "default": "warning",
+        "rules": [
+            {
+                "linters": [
+                    "dupl",
+                    "misspell",
+                    "makezero"
+                ],
+                "severity": "info"
+            }
+        ]
+    },
+    "version": "2"
+}

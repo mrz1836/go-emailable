@@ -1,0 +1,41 @@
+{
+    "emails": [
+        {
+            "email": "avery.example@example.com",
+            "free": false,
+            "reason": "accepted_email",
+            "role": false,
+            "score": 95,
+            "state": "deliverable"
+        },
+        {
+            "domain": "mail.example.com",
+            "email": "blake.example@mail.example.com",
+            "reason": "invalid_domain",
+            "score": 0,
+            "state": "undeliverable"
+        },
+        {
+            "email": "support@lists.example.com",
+            "reason": "low_quality",
+            "role": true,
+            "state": "risky"
+        }
+    ],
+    "id": "65f0c1d2e3a4b5c6d7e8f902",
+    "message": "SDK fixture: completion callback of a synthetic batch.",
+    "reason_counts": {
+        "accepted_email": 1,
+        "invalid_domain": 1,
+        "low_quality": 1
+    },
+    "total_counts": {
+        "deliverable": 1,
+        "duplicate": 0,
+        "processed": 3,
+        "risky": 1,
+        "total": 3,
+        "undeliverable": 1,
+        "unknown": 0
+    }
+}

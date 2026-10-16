@@ -1,0 +1,66 @@
+{
+    "emails": [
+        {
+            "accept_all": false,
+            "birth_year": 1990,
+            "did_you_mean": null,
+            "disposable": false,
+            "domain": "example.com",
+            "email": "avery.example+news@example.com",
+            "first_name": "Avery",
+            "free": true,
+            "full_name": "Avery Example",
+            "gender": "unknown",
+            "last_name": "Example",
+            "mailbox_full": false,
+            "mx_record": "mx.example.com",
+            "no_reply": false,
+            "reason": "accepted_email",
+            "role": false,
+            "score": 96,
+            "smtp_provider": "SDK Fixture Mail",
+            "state": "deliverable",
+            "tag": "news",
+            "user": "avery.example+news"
+        },
+        {
+            "email": "blake.example@mail.example.com",
+            "reason": "rejected_email",
+            "state": "undeliverable"
+        },
+        {
+            "accept_all": true,
+            "did_you_mean": "casey.example@example.com",
+            "email": "casey.example@lists.example.com",
+            "reason": "low_deliverability",
+            "state": "risky"
+        },
+        {
+            "email": "avery.example+news@example.com",
+            "state": "duplicate"
+        },
+        {
+            "reason": "no_connect",
+            "score": null,
+            "state": "unknown"
+        },
+        {}
+    ],
+    "id": "65f0c1d2e3a4b5c6d7e8f901",
+    "message": "SDK fixture: this synthetic batch has finished.",
+    "reason_counts": {
+        "accepted_email": 1,
+        "low_deliverability": 1,
+        "no_connect": 1,
+        "rejected_email": 1
+    },
+    "total_counts": {
+        "deliverable": 1,
+        "duplicate": 1,
+        "processed": 6,
+        "risky": 1,
+        "total": 6,
+        "undeliverable": 1,
+        "unknown": 1
+    }
+}

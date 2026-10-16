@@ -1,0 +1,23 @@
+{
+    "emails": [
+        {
+            "email": "avery.example@example.com",
+            "reason": "accepted_email",
+            "score": 96,
+            "state": "deliverable"
+        },
+        {
+            "email": "blake.example@mail.example.com",
+            "reason": "rejected_email",
+            "score": 0,
+            "state": "undeliverable"
+        }
+    ],
+    "message": "SDK fixture: partial rows of a synthetic batch that is still running.",
+    "processed": 2,
+    "total": 5,
+    "total_counts": {
+        "processed": 2,
+        "total": 5
+    }
+}

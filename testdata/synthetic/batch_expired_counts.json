@@ -1,0 +1,18 @@
+{
+    "id": "65f0c1d2e3a4b5c6d7e8f901",
+    "message": "SDK fixture: the rows of this synthetic batch are no longer kept; only its counts remain.",
+    "reason_counts": {
+        "accepted_email": 3,
+        "invalid_domain": 1,
+        "timeout": 1
+    },
+    "total_counts": {
+        "deliverable": 3,
+        "duplicate": 0,
+        "processed": 5,
+        "risky": 0,
+        "total": 5,
+        "undeliverable": 1,
+        "unknown": 1
+    }
+}

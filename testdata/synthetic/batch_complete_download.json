@@ -1,0 +1,27 @@
+{
+    "download_file": "https://downloads.example.com/sdk-fixture/65f0c1d2e3a4b5c6d7e8f901.csv?expires=1767225600&signature=sigmarker4e8a1f",
+    "id": "65f0c1d2e3a4b5c6d7e8f901",
+    "message": "SDK fixture: this synthetic batch of 1,001 addresses has finished; its rows are in the download file.",
+    "reason_counts": {
+        "accepted_email": 700,
+        "invalid_domain": 30,
+        "invalid_email": 60,
+        "invalid_smtp": 11,
+        "low_deliverability": 40,
+        "low_quality": 50,
+        "no_connect": 15,
+        "rejected_email": 70,
+        "timeout": 10,
+        "unavailable_smtp": 9,
+        "unexpected_error": 6
+    },
+    "total_counts": {
+        "deliverable": 700,
+        "duplicate": 0,
+        "processed": 1001,
+        "risky": 90,
+        "total": 1001,
+        "undeliverable": 171,
+        "unknown": 40
+    }
+}

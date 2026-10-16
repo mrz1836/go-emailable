@@ -1,0 +1,15 @@
+{
+    "download_file": "https://downloads.example.com/sdk-fixture/65f0c1d2e3a4b5c6d7e8f902.csv?expires=1767225600&signature=sigmarker4e8a1f",
+    "id": "65f0c1d2e3a4b5c6d7e8f902",
+    "message": "SDK fixture: completion callback of a synthetic batch whose rows are in the download file.",
+    "reason_counts": {
+        "accepted_email": 1500,
+        "rejected_email": 500
+    },
+    "total_counts": {
+        "deliverable": 1500,
+        "processed": 2000,
+        "total": 2000,
+        "undeliverable": 500
+    }
+}

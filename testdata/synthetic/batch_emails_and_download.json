@@ -1,0 +1,27 @@
+{
+    "download_file": "https://downloads.example.com/sdk-fixture/65f0c1d2e3a4b5c6d7e8f901.csv?expires=1767225600&signature=sigmarker4e8a1f",
+    "emails": [
+        {
+            "email": "avery.example@example.com",
+            "reason": "accepted_email",
+            "state": "deliverable"
+        },
+        {
+            "email": "blake.example@mail.example.com",
+            "reason": "low_quality",
+            "state": "risky"
+        }
+    ],
+    "id": "65f0c1d2e3a4b5c6d7e8f901",
+    "message": "SDK fixture: a synthetic snapshot with both inline rows and a download file.",
+    "reason_counts": {
+        "accepted_email": 1,
+        "low_quality": 1
+    },
+    "total_counts": {
+        "deliverable": 1,
+        "processed": 2,
+        "risky": 1,
+        "total": 2
+    }
+}
