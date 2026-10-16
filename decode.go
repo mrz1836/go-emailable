@@ -255,19 +255,24 @@ func parseInt(lit []byte) (n int64, ok, inRange bool) {
 }
 
 // decodeIntRange decodes an optional JSON integer from lo to hi, or null or
-// absent as nil.
-func decodeIntRange(raw []byte, lo, hi int64) (*int, *decodeError) {
+// absent as nil. The bounds are int32, and the value is checked against the
+// int32 limits before it is converted, so the int it becomes is exact on every
+// platform, 32-bit ones included.
+func decodeIntRange(raw []byte, lo, hi int32) (*int, *decodeError) {
 	if isNull(raw) {
 		return nil, nil
 	}
 	n, ok, inRange := parseInt(raw)
-	switch {
-	case !ok:
+	if !ok {
 		return nil, wrongType("")
-	case !inRange || n < lo || n > hi:
+	}
+	if !inRange || n < math.MinInt32 || n > math.MaxInt32 {
 		return nil, outOfRange("")
 	}
 	v := int(n)
+	if v < int(lo) || v > int(hi) {
+		return nil, outOfRange("")
+	}
 	return &v, nil
 }
 

@@ -523,7 +523,7 @@ func TestDecodeIntRange(t *testing.T) {
 	tests := []struct {
 		name   string
 		raw    string
-		lo, hi int64
+		lo, hi int32
 		want   *int
 		cause  error
 	}{
@@ -547,6 +547,10 @@ func TestDecodeIntRange(t *testing.T) {
 		{name: "birth year zero", raw: `0`, hi: maxBirthYear, want: new(0)},
 		{name: "a lower bound", raw: `4`, lo: 5, hi: 9, cause: errOutOfRange},
 		{name: "at a lower bound", raw: `5`, lo: 5, hi: 9, want: new(5)},
+		{name: "at the int32 maximum", raw: `2147483647`, hi: math.MaxInt32, want: new(math.MaxInt32)},
+		{name: "past the int32 maximum", raw: `2147483648`, hi: math.MaxInt32, cause: errOutOfRange},
+		{name: "at the int32 minimum", raw: `-2147483648`, lo: math.MinInt32, want: new(math.MinInt32)},
+		{name: "past the int32 minimum", raw: `-2147483649`, lo: math.MinInt32, cause: errOutOfRange},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
