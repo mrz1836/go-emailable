@@ -6,9 +6,9 @@
 
 <br/>
 
-<a href="https://github.com/mrz1836/go-emailable/releases"><img src="https://img.shields.io/github/release-pre/mrz1836/go-emailable?include_prereleases&style=flat-square&logo=github&color=black" alt="Release"></a>
+<a href="https://github.com/mrz1836/go-emailable/releases"><img src="https://img.shields.io/github/release-pre/mrz1836/go-emailable.svg?include_prereleases&style=flat-square&logo=github&color=black" alt="Release"></a>
 <a href="https://golang.org/"><img src="https://img.shields.io/github/go-mod/go-version/mrz1836/go-emailable?style=flat-square&logo=go&color=00ADD8" alt="Go Version"></a>
-<a href="https://github.com/mrz1836/go-emailable/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mrz1836/go-emailable?style=flat-square&color=blue" alt="License"></a>
+<a href="https://github.com/mrz1836/go-emailable/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mrz1836/go-emailable.svg?style=flat-square&color=blue" alt="License"></a>
 
 <br/>
 
@@ -19,7 +19,7 @@
     </td>
     <td align="left">
        <a href="https://github.com/mrz1836/go-emailable/actions"><img src="https://img.shields.io/github/actions/workflow/status/mrz1836/go-emailable/fortress.yml?branch=master&label=build&logo=github&style=flat-square" alt="Build"></a>
-       <a href="https://github.com/mrz1836/go-emailable/actions"><img src="https://img.shields.io/github/last-commit/mrz1836/go-emailable?style=flat-square&logo=git&logoColor=white&label=last%20update" alt="Last Commit"></a>
+       <a href="https://github.com/mrz1836/go-emailable/actions"><img src="https://img.shields.io/github/last-commit/mrz1836/go-emailable.svg?style=flat-square&logo=git&logoColor=white&label=last%20update" alt="Last Commit"></a>
     </td>
     <td align="right">
        &nbsp;&nbsp;&nbsp;&nbsp; <code>Quality</code> &nbsp;&nbsp;
